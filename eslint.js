@@ -6,6 +6,14 @@ module.exports = {
         node: true,
     },
     rules: {
+        'comma-dangle': [
+            'error', {
+                arrays: 'always-multiline',
+                objects: 'always-multiline',
+                imports: 'always-multiline',
+                exports: 'always-multiline',
+                functions: 'never',
+            }],
         indent: [2, 4],
         'max-len': [
             'error', 120, 2, {

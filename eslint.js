@@ -28,5 +28,5 @@ module.exports = {
         'react/jsx-indent-props': ['error', 4],
         'react/jsx-indent': ['error', 4],
     },
-    'plugins': ['import', 'promise', 'jsx-a11y', 'react'],
+    plugins: ['import', 'promise', 'jsx-a11y', 'react'],
 };

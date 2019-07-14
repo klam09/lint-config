@@ -6,7 +6,6 @@ module.exports = {
         node: true,
     },
     rules: {
-        'import/no-unresolved': 0, // ignore webpack alias
         indent: [2, 4],
         'max-len': [
             'error', 120, 2, {
@@ -18,7 +17,16 @@ module.exports = {
             },
         ],
         'no-console': 0, // console to be removed by terser-webpack-plugin
-        'no-param-reassign': 0,
-        'no-underscore-dangle': 0,
+        // import
+        'import/no-unresolved': 0, // ignore webpack alias
+        // promise
+        'promise/param-names': 'error',
+        'promise/always-return': 'error',
+        'promise/catch-or-return': 'error',
+        'promise/no-native': 'off',
+        // react
+        'react/jsx-indent-props': ['error', 4],
+        'react/jsx-indent': ['error', 4],
     },
+    'plugins': ['import', 'promise', 'jsx-a11y', 'react'],
 };

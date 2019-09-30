@@ -1,10 +1,13 @@
 module.exports = {
+    parser: '@typescript-eslint/parser',
     extends: 'airbnb-base',
     env: {
         browser: true,
         es6: true,
         node: true,
     },
+    globals: {},
+    plugins: ['@typescript-eslint', 'import', 'promise'],
     rules: {
         'comma-dangle': [
             'error', {
@@ -25,7 +28,6 @@ module.exports = {
             },
         ],
         'no-console': 0, // console to be removed by terser-webpack-plugin
-        'no-underscore-dangle': 0,
         // import
         'import/no-unresolved': 0, // ignore webpack alias
         // promise
@@ -33,6 +35,21 @@ module.exports = {
         'promise/always-return': 'error',
         'promise/catch-or-return': 'error',
         'promise/no-native': 'off',
+        // typescript
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'error',
+        'no-useless-constructor': 'off',
+        '@typescript-eslint/no-useless-constructor': 'error',
     },
-    plugins: ['import', 'promise'],
+    settings: {
+        'import/extensions': ['.js', '.ts'],
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts'],
+        },
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.ts'],
+            },
+        },
+    },
 };

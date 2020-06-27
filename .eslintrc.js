@@ -34,5 +34,22 @@ module.exports = {
         'promise/catch-or-return': 'error',
         'promise/no-native': 'off',
     },
-    plugins: ['import', 'promise'],
+    overrides: [
+        {
+            files: [
+                './src/**/*.js',
+                './src/**/*.svelte',
+            ],
+            processor: 'svelte3/svelte3',
+            excludedFiles: '*.test.js',
+        }
+    ],
+    plugins: [
+        'svelte3',
+        'import',
+        'promise',
+    ],
+    settings: {
+        'svelte3/ignore-styles': (attr) => attr.lang === 'scss',
+    },
 };

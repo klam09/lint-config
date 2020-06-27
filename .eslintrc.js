@@ -1,5 +1,8 @@
 module.exports = {
-    extends: 'airbnb-base',
+    extends: [
+        'airbnb-base',
+        'prettier',
+    ],
     env: {
         browser: true,
         es6: true,
@@ -33,6 +36,8 @@ module.exports = {
         'promise/always-return': 'error',
         'promise/catch-or-return': 'error',
         'promise/no-native': 'off',
+        // prettier
+        'prettier/prettier': 'error',
     },
-    plugins: ['import', 'promise'],
+    plugins: ['prettier', 'import', 'promise'],
 };

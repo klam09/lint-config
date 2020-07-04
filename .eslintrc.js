@@ -1,5 +1,9 @@
 module.exports = {
-    extends: 'airbnb',
+    extends: [
+        'airbnb',
+        'prettier',
+        'prettier/react',
+    ],
     env: {
         browser: true,
         es6: true,
@@ -35,6 +39,8 @@ module.exports = {
         // react
         'react/jsx-indent-props': ['error', 4],
         'react/jsx-indent': ['error', 4],
+        // prettier
+        'prettier/prettier': 'error',
     },
-    plugins: ['import', 'promise', 'jsx-a11y', 'react'],
+    plugins: ['prettier', 'import', 'promise', 'jsx-a11y', 'react'],
 };
